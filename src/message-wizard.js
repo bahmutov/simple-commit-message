@@ -2,6 +2,7 @@
 
 // copied from cz-conventional-changelog
 const wrap = require('word-wrap')
+const join = require('path').join
 
 // This can be any kind of SystemJS compatible module.
 // We use Commonjs here, but ES6 or AMD would do just
@@ -22,6 +23,11 @@ module.exports = {
   prompter: function prompter (cz, cb) {
     console.log('\nLine 1 will be cropped at 100 characters.\n' +
       'All other lines will be wrapped after 100 characters.\n')
+
+    // assumes commit from the package folder
+    const pkg = require(join(process.cwd(), 'package.json'))
+    const currentTag = pkg.publishConfig &&
+      pkg.publishConfig.tag || 'latest'
 
     // Let's ask some questions of the user
     // so that we can populate our commit
@@ -44,7 +50,7 @@ module.exports = {
             value: 'fix'
           }, {
             name: 'chore:    Changes to the build process or auxiliary tools\n' +
-                  '          and libraries such as documentation generation',
+                  '            and libraries such as documentation generation',
             value: 'chore'
           }
         ]
@@ -69,6 +75,13 @@ module.exports = {
         name: 'breaking',
         message: 'Is this a major breaking change:\n',
         default: false
+      }, {
+        type: 'input',
+        name: 'tag',
+        message: 'Should this be published under different tag?\n' +
+                 '  This will let users still install the current latest,\n' +
+                 '  but eary adapters can `npm install <name>@<tag>`\n',
+        default: currentTag
       }
     ], function (answers) {
       var maxLineWidth = 100
@@ -88,8 +101,20 @@ module.exports = {
       // Wrap these lines at 100 characters
       var body = wrap(breakingChange + answers.body, wrapOptions)
       var issues = wrap(answers.issues, wrapOptions)
-
-      cb(head + '\n\n' + body + '\n\n' + issues)
+      var usedTag = answers.tag === 'currentTag' ? '' : '\nTAG: ' + answers.tag
+      cb(head + '\n\n' + body + usedTag + '\n\n' + issues)
     })
   }
+}
+
+if (!module.parent) {
+  (function exampleWizard () {
+    console.log('showing example wizard, requires DEV dependencies installed')
+    const inquirer = require('inquirer')
+
+    module.exports.prompter(inquirer, function (text) {
+      console.log('formed the following message')
+      console.log(text)
+    })
+  }())
 }
