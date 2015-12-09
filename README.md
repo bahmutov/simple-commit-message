@@ -28,6 +28,7 @@ Then use the following methods
 
 ```js
 var simple = require('simple-commit-message')
+simple.name // "simple"
 // returns an object with parsed info
 simple.parse(message)
 // returns true / false, prints errors to given log function or console.error
