@@ -12,6 +12,18 @@
 [![manpm](https://img.shields.io/badge/manpm-%E2%9C%93-3399ff.svg)](https://github.com/bahmutov/manpm)
 [![standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
+## Purpose
+
+This module can:
+
+* parse simple commit message of the type `type(scope): message`
+* validate a given message if it fits the above simple format
+* guide the user with questions in order to form well formatted message
+
+## Install and use
+
+
+
 ### Small print
 
 Author: Gleb Bahmutov &copy; 2015

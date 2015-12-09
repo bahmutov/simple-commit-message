@@ -4,7 +4,7 @@
   "main": "src/index.js",
   "version": "0.0.0-semantic-release",
   "scripts": {
-    "ban": "ban",
+    "ban": "node --harmony node_modules/.bin/ban",
     "test": "mocha --harmony src/*-spec.js",
     "lint": "standard src/*.js",
     "commit": "commit-wizard",
