@@ -1,8 +1,7 @@
-'use strict';
+'use strict'
 
 // copied from cz-conventional-changelog
-
-var wrap = require('word-wrap');
+const wrap = require('word-wrap')
 
 // This can be any kind of SystemJS compatible module.
 // We use Commonjs here, but ES6 or AMD would do just
@@ -20,10 +19,9 @@ module.exports = {
   //
   // By default, we'll de-indent your commit
   // template and will keep empty lines.
-  prompter: function(cz, cb) {
-
+  prompter: function prompter (cz, cb) {
     console.log('\nLine 1 will be cropped at 100 characters.\n' +
-      'All other lines will be wrapped after 100 characters.\n');
+      'All other lines will be wrapped after 100 characters.\n')
 
     // Let's ask some questions of the user
     // so that we can populate our commit
@@ -38,20 +36,21 @@ module.exports = {
         name: 'type',
         message: 'Select the type of change that you\'re committing:',
         choices: [
-        {
-          name: 'feat:     A new feature',
-          value: 'feat'
-        }, {
-          name: 'fix:      A bug fix',
-          value: 'fix'
-        }, {
-          name: 'chore:    Changes to the build process or auxiliary tools\n' +
-            '  and libraries such as documentation generation',
-          value: 'chore'
-        }, {
-          name: 'release:  Force new release',
-          value: 'release'
-        }]
+          {
+            name: 'feat:     A new feature',
+            value: 'feat'
+          }, {
+            name: 'fix:      A bug fix',
+            value: 'fix'
+          }, {
+            name: 'chore:    Changes to the build process or auxiliary tools\n' +
+              '  and libraries such as documentation generation',
+            value: 'chore'
+          }, {
+            name: 'release:  Force new release',
+            value: 'release'
+          }
+        ]
       }, {
         type: 'input',
         name: 'scope',
@@ -74,27 +73,26 @@ module.exports = {
         message: 'Is this a major breaking change:\n',
         default: false
       }
-    ], function(answers) {
-
-      var maxLineWidth = 100;
+    ], function (answers) {
+      var maxLineWidth = 100
 
       var wrapOptions = {
         trim: true,
         newline: '\n',
-        indent:'',
+        indent: '',
         width: maxLineWidth
-      };
+      }
 
-      var breakingChange = answers.breaking ? 'BREAKING CHANGE: ' : '';
+      var breakingChange = answers.breaking ? 'BREAKING CHANGE: ' : ''
       // Hard limit this line
       var head = (answers.type + '(' + answers.scope.trim() + '): ' +
-        breakingChange + answers.subject.trim()).slice(0, maxLineWidth);
+        breakingChange + answers.subject.trim()).slice(0, maxLineWidth)
 
       // Wrap these lines at 100 characters
-      var body = wrap(breakingChange + answers.body, wrapOptions);
-      var issues = wrap(answers.issues, wrapOptions);
+      var body = wrap(breakingChange + answers.body, wrapOptions)
+      var issues = wrap(answers.issues, wrapOptions)
 
-      cb(head + '\n\n' + body + '\n\n' + issues);
-    });
+      cb(head + '\n\n' + body + '\n\n' + issues)
+    })
   }
-};
+}
