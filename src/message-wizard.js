@@ -44,11 +44,8 @@ module.exports = {
             value: 'fix'
           }, {
             name: 'chore:    Changes to the build process or auxiliary tools\n' +
-              '  and libraries such as documentation generation',
+                  '          and libraries such as documentation generation',
             value: 'chore'
-          }, {
-            name: 'release:  Force new release',
-            value: 'release'
           }
         ]
       }, {
