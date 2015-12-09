@@ -1,0 +1,32 @@
+{
+  "name": "simple-commit-message",
+  "version": "1.0.0",
+  "description": "Simple commit message wizard and validator; works with commitizen and pre-git",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha --harmony src/*-spec.js",
+    "lint": "standard src/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/simple-commit-message.git"
+  },
+  "keywords": [
+    "commit",
+    "message",
+    "validation",
+    "wizard",
+    "pre-git",
+    "commitizen"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bahmutov/simple-commit-message/issues"
+  },
+  "homepage": "https://github.com/bahmutov/simple-commit-message#readme",
+  "devDependencies": {
+    "mocha": "2.3.4",
+    "standard": "5.4.1"
+  }
+}
