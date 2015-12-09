@@ -22,7 +22,21 @@ This module can:
 
 ## Install and use
 
+    npm install --save simple-commit-message
 
+Then use the following methods
+
+```js
+var simple = require('simple-commit-message')
+// returns an object with parsed info
+simple.parse(message)
+// returns true / false, prints errors to given log function or console.error
+simple.validate(message, log)
+// message wizard built on top of inquirer
+simple.prompter(inquirer, cb)
+```
+
+See [inquirer](https://www.npmjs.com/package/inquirer) for details.
 
 ### Small print
 
