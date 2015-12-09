@@ -7,12 +7,17 @@
     "test": "mocha --harmony src/*-spec.js",
     "lint": "standard src/*.js",
     "commit": "commit-wizard",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/bahmutov/simple-commit-message.git"
   },
+  "files": [
+    "src/*.js",
+    "!src/*-spec.js"
+  ],
   "keywords": [
     "commit",
     "message",
@@ -47,6 +52,7 @@
   },
   "dependencies": {
     "check-more-types": "2.3.0",
-    "lazy-ass": "1.3.0"
+    "lazy-ass": "1.3.0",
+    "word-wrap": "1.1.0"
   }
 }
