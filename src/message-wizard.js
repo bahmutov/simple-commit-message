@@ -30,9 +30,7 @@ module.exports = {
 
 if (!module.parent) {
   (function exampleWizard () {
-    console.log('showing example wizard, requires DEV dependencies installed')
     const inquirer = require('inquirer')
-
     module.exports.prompter(inquirer, function (text) {
       console.log('formed the following message')
       console.log(text)

@@ -39,6 +39,21 @@ simple.prompter(inquirer, cb)
 
 See [inquirer](https://www.npmjs.com/package/inquirer) for details.
 
+## Wizard
+
+This module comes with included "bin" script that runs the wizard and asks you the questions.
+To use, add a script to your package, for example name it "commit"
+
+```json
+{
+    "scripts": {
+        "commit": "simple-commit-message"
+    }
+}
+```
+
+Then instead of `git commit` use the command `npm run commit` and answer questions.
+
 ## Related
 
 * [conventional-commit-message](https://github.com/bahmutov/conventional-commit-message) is based

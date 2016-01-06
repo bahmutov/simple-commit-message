@@ -1,25 +1,46 @@
+const la = require('lazy-ass')
+const is = require('check-more-types')
+
 const wrap = require('word-wrap')
+const maxLineWidth = 100
+const wrapOptions = {
+  trim: true,
+  newline: '\n',
+  indent: '',
+  width: maxLineWidth
+}
+const BREAKING = 'BREAKING CHANGE'
 
 function formatMessage (answers) {
-  const maxLineWidth = 100
-  const wrapOptions = {
-    trim: true,
-    newline: '\n',
-    indent: '',
-    width: maxLineWidth
-  }
+  la(is.object(answers), 'missing answers', answers)
+  var breakingChange = answers.breaking ? BREAKING + ': ' : ''
 
-  var breakingChange = answers.breaking ? 'BREAKING CHANGE: ' : ''
-  // Hard limit this line
+  // Hard limit the subject line
   var head = (answers.type + '(' + answers.scope.trim() + '): ' +
     breakingChange + answers.subject.trim()).slice(0, maxLineWidth)
 
   // Wrap these lines at 100 characters
-  var body = wrap(breakingChange + answers.body, wrapOptions)
+  var body = wrap(
+    (answers.breaking ? BREAKING + '\n' : '') + answers.body,
+    wrapOptions)
   var issues = wrap(answers.issues, wrapOptions)
-  var usedTag = answers.tag === 'currentTag' ? '' : '\nTAG: ' + answers.tag
+  const hasTag = is.unemptyString(answers.tag) &&
+    (answers.tag !== 'currentTag')
+  var usedTag = hasTag ? ('\nTAG: ' + answers.tag) : ''
   const message = head + '\n\n' + body + usedTag + '\n\n' + issues
   return message
 }
 
 module.exports = formatMessage
+
+if (!module.parent) {
+  console.log(formatMessage({
+    type: 'fix',
+    breaking: true,
+    scope: 'scope',
+    subject: 'this is a subject',
+    body: 'longer text\nsecond line\nthird line\n\n',
+    issues: 'no issues',
+    tag: ''
+  }))
+}
