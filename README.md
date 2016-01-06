@@ -39,7 +39,7 @@ simple.prompter(inquirer, cb)
 
 See [inquirer](https://www.npmjs.com/package/inquirer) for details.
 
-## Relate
+## Related
 
 * [conventional-commit-message](https://github.com/bahmutov/conventional-commit-message) is based
   on AngularJS log standard and has more commit types allowed.
