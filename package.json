@@ -8,7 +8,7 @@
   "version": "0.0.0-semantic-release",
   "scripts": {
     "ban": "node --harmony node_modules/.bin/ban",
-    "test": "mocha --harmony src/*-spec.js",
+    "test": "node --harmony node_modules/.bin/rocha src/*-spec.js",
     "lint": "standard src/*.js",
     "commit": "commit-wizard",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
@@ -40,8 +40,8 @@
   "homepage": "https://github.com/bahmutov/simple-commit-message#readme",
   "devDependencies": {
     "ban-sensitive-files": "1.7.2",
-    "mocha": "2.3.4",
     "pre-git": "3.1.2",
+    "rocha": "1.6.1",
     "semantic-release": "6.0.3",
     "standard": "5.4.1"
   },
