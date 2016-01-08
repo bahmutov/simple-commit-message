@@ -28,7 +28,7 @@ function formatMessage (answers) {
     (answers.tag !== 'currentTag')
   var usedTag = hasTag ? ('\nTAG: ' + answers.tag) : ''
   const message = head + '\n\n' + body + usedTag + '\n\n' + issues
-  return message
+  return message.trim()
 }
 
 module.exports = formatMessage
