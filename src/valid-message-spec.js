@@ -52,4 +52,16 @@ describe('validate message', () => {
     la(validate(message, log), 'message is valid')
     la(!called, 'error log not called')
   })
+
+  it('allows plain semver messages', () => {
+    la(validate('1.1.0'))
+  })
+
+  it('allows semver with tag', () => {
+    la(validate('1.1.0-alpha'))
+  })
+
+  it('does not allow non-semver', () => {
+    la(!validate('1.1.0.0'))
+  })
 })

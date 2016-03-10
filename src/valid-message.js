@@ -3,6 +3,7 @@
 const la = require('lazy-ass')
 const check = require('check-more-types')
 const util = require('util')
+const semver = require('semver')
 
 const MAX_LENGTH = 100
 const PATTERN = /^((?:fixup!\s*)?(\w*)(\(([\w\$\.\*/-]*)\))?\: (.*))(\n|$)/
@@ -35,6 +36,10 @@ function parseMessage (str) {
 function validateMessage (message, log) {
   if (!log) {
     log = console.error.bind(console)
+  }
+
+  if (semver.valid(message)) {
+    return true
   }
 
   function failedMessage () {
