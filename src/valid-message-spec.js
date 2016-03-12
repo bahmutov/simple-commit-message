@@ -57,6 +57,11 @@ describe('validate message', () => {
     la(validate('1.1.0'))
   })
 
+  it('trims message', () => {
+    la(validate('1.1.0\n'), 'single new line')
+    la(validate('1.1.0\n\n'), 'multiple new lines')
+  })
+
   it('allows semver with tag', () => {
     la(validate('1.1.0-alpha'))
   })

@@ -34,6 +34,8 @@ function parseMessage (str) {
 }
 
 function validateMessage (message, log) {
+  la(check.string(message), 'expected string message', message)
+  message = message.trim()
   if (!log) {
     log = console.error.bind(console)
   }
