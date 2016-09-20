@@ -20,6 +20,15 @@ This module can:
 * validate a given message if it fits the above simple format
 * guide the user with questions in order to form well formatted message
 
+## Valid commit messages
+
+```
+feat(something): this is a new feature
+fix(login): an example fix message
+chore(tests): writing more tests
+WIP: work in progress, not ready yet
+```
+
 ## Install and use
 
     npm install --save simple-commit-message
@@ -99,13 +108,13 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
-[simple-commit-message-icon]: https://nodei.co/npm/simple-commit-message.png?downloads=true
+[simple-commit-message-icon]: https://nodei.co/npm/simple-commit-message.svg?downloads=true
 [simple-commit-message-url]: https://npmjs.org/package/simple-commit-message
-[simple-commit-message-ci-image]: https://travis-ci.org/bahmutov/simple-commit-message.png?branch=master
+[simple-commit-message-ci-image]: https://travis-ci.org/bahmutov/simple-commit-message.svg?branch=master
 [simple-commit-message-ci-url]: https://travis-ci.org/bahmutov/simple-commit-message
-[simple-commit-message-dependencies-image]: https://david-dm.org/bahmutov/simple-commit-message.png
+[simple-commit-message-dependencies-image]: https://david-dm.org/bahmutov/simple-commit-message.svg
 [simple-commit-message-dependencies-url]: https://david-dm.org/bahmutov/simple-commit-message
-[simple-commit-message-devdependencies-image]: https://david-dm.org/bahmutov/simple-commit-message/dev-status.png
+[simple-commit-message-devdependencies-image]: https://david-dm.org/bahmutov/simple-commit-message/dev-status.svg
 [simple-commit-message-devdependencies-url]: https://david-dm.org/bahmutov/simple-commit-message#info=devDependencies
 [semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-url]: https://github.com/semantic-release/semantic-release
