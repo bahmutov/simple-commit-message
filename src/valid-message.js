@@ -6,8 +6,8 @@ const util = require('util')
 const semver = require('semver')
 
 const MAX_LENGTH = 100
-const PATTERN = /^((?:fixup!\s*)?(\w*)(\(([\w\$\.\*/-]*)\))?\: (.*))(\n|$)/
-const IGNORED = /^WIP\:/
+const PATTERN = /^((?:fixup!\s*)?(\w*)(\(([\w$.*/-]*)\))?\: (.*))(\n|$)/
+const IGNORED = /^WIP:/
 
 // simplified types
 // major, break -> major version increment
