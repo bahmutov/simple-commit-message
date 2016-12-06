@@ -34,6 +34,24 @@ describe('parse message', () => {
     const parsed = parse(message)
     la(!parsed)
   })
+
+  it('handles "break" type', () => {
+    const message = 'break(log): new log format'
+    const parsed = parse(message)
+    la(parsed.firstLine === message, 'first line', parsed)
+    la(parsed.type === 'major', 'type', parsed)
+    la(parsed.scope === 'log', 'scope', parsed)
+    la(parsed.subject === 'new log format', 'subject', parsed)
+  })
+
+  it('handles "major" type', () => {
+    const message = 'major(log): new log format'
+    const parsed = parse(message)
+    la(parsed.firstLine === message, 'first line', parsed)
+    la(parsed.type === 'major', 'type', parsed)
+    la(parsed.scope === 'log', 'scope', parsed)
+    la(parsed.subject === 'new log format', 'subject', parsed)
+  })
 })
 
 describe('validate message', () => {

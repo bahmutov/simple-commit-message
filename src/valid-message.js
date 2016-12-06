@@ -10,10 +10,26 @@ const PATTERN = /^((?:fixup!\s*)?(\w*)(\(([\w\$\.\*/-]*)\))?\: (.*))(\n|$)/
 const IGNORED = /^WIP\:/
 
 // simplified types
+// major, break -> major version increment
+// feat -> minor version increment
+// fix -> patch version increment
+// chore -> no version increment
+// everything else -> not a semantic commit message, ignored
+// NOTE: both "major" and "break" -> "major"
 const TYPES = {
+  major: true,
+  break: true,
   feat: true,
   fix: true,
   chore: true
+}
+
+const TYPE_MAP = {
+  major: 'major',
+  break: 'major',
+  feat: 'feat',
+  fix: 'fix',
+  chore: 'chore'
 }
 
 function parseMessage (str) {
@@ -25,9 +41,10 @@ function parseMessage (str) {
     return
   }
 
+  const type = TYPE_MAP[match[2]] || match[2]
   return {
     firstLine: match[1],
-    type: match[2],
+    type: type,
     scope: match[4],
     subject: match[5]
   }

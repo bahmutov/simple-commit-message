@@ -23,11 +23,14 @@ This module can:
 ## Valid commit messages
 
 ```
+major(scope): breaking change in API
 feat(something): this is a new feature
 fix(login): an example fix message
 chore(tests): writing more tests
 WIP: work in progress, not ready yet
 ```
+
+"break(scope): ..." is synonym to "major(scope): ..."
 
 ## Install and use
 
@@ -39,7 +42,14 @@ Then use the following methods
 var simple = require('simple-commit-message')
 simple.name // "simple"
 // returns an object with parsed info
-simple.parse(message)
+const result = simple.parse(message)
+/*
+  {
+    firstLine, // first message line
+    type,      // "major", "feat", "fix", "chore" or undefined
+    scope,     // inside of round braces
+    subject    // message after :
+*/
 // returns true / false, prints errors to given log function or console.error
 simple.validate(message, log)
 // message wizard built on top of inquirer
@@ -65,8 +75,8 @@ Then instead of `git commit` use the command `npm run commit` and answer questio
 
 ## Related
 
-* [conventional-commit-message](https://github.com/bahmutov/conventional-commit-message) is based
-  on AngularJS log standard and has more commit types allowed.
+* [conventional-commit-message](https://github.com/bahmutov/conventional-commit-message)
+is based on AngularJS log standard and has more commit types allowed.
 
 ### Small print
 
