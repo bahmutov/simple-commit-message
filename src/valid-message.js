@@ -66,6 +66,13 @@ function validateMessage (message, log) {
     // http://gitx.lighthouseapp.com/projects/17830/tickets/294-feature-display-hook-error-message-when-hook-fails
     // https://groups.google.com/group/gitx/browse_thread/thread/a03bcab60844b812
     log('INVALID COMMIT MSG: ' + util.format.apply(null, arguments))
+    log('Commit message should follow semantic convention')
+    log('Examples:\n' +
+      '  major(api): API rewrite, not backwards compatible!\n' +
+      '  feat(log): add new logging feature\n' +
+      '  fix(config): always load config first\n' +
+      '  chore(ci): semantic commit without triggering new version\n')
+    log('Please see https://github.com/bahmutov/simple-commit-message#valid-commit-messages')
   }
 
   if (IGNORED.test(message)) {
