@@ -11,7 +11,7 @@ const IGNORED = /^WIP:/
 
 // simplified types
 // major, break -> major version increment
-// feat -> minor version increment
+// minor, feat -> minor version increment
 // fix -> patch version increment
 // chore -> no version increment
 // everything else -> not a semantic commit message, ignored
@@ -19,6 +19,7 @@ const IGNORED = /^WIP:/
 const TYPES = {
   major: true,
   break: true,
+  minor: true,
   feat: true,
   fix: true,
   chore: true
@@ -27,6 +28,7 @@ const TYPES = {
 const TYPE_MAP = {
   major: 'major',
   break: 'major',
+  minor: 'feat',
   feat: 'feat',
   fix: 'fix',
   chore: 'chore'

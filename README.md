@@ -22,15 +22,23 @@ This module can:
 
 ## Valid commit messages
 
+There are 3 names for each version number upgrade, plus a few
+utility names that should not change the version.
+
 ```
 major(scope): breaking change in API
-feat(something): this is a new feature
+minor(something): this is a new feature
 fix(login): an example fix message
 chore(tests): writing more tests
 WIP: work in progress, not ready yet
 ```
 
-"break(scope): ..." is synonym to "major(scope): ..."
+### Synonyms
+
+For convenience there are aliases to `major`, `minor` and `fix`.
+
+* "break(scope): ..." is synonym to "major(scope): ..."
+* "feat(scope): ..." is synonym to "minor(scope): ..."
 
 ## Install and use
 

@@ -1,5 +1,8 @@
+'use strict'
+
 const la = require('lazy-ass')
 const check = require('check-more-types')
+const snapshot = require('snap-shot')
 
 /* global describe, it */
 describe('api', () => {
@@ -21,12 +24,11 @@ describe('parse message', () => {
   })
 
   it('parses valid message', () => {
-    const message = 'feat(foo): new feature'
-    const parsed = parse(message)
-    la(parsed.firstLine === message, 'first line', parsed)
-    la(parsed.type === 'feat', 'type', parsed)
-    la(parsed.scope === 'foo', 'scope', parsed)
-    la(parsed.subject === 'new feature', 'subject', parsed)
+    snapshot(parse('feat(foo): new feature'))
+  })
+
+  it('parses minor message', () => {
+    snapshot(parse('minor(foo): add feature without breaking stuff'))
   })
 
   it('rejects invalid message', () => {
@@ -36,21 +38,11 @@ describe('parse message', () => {
   })
 
   it('handles "break" type', () => {
-    const message = 'break(log): new log format'
-    const parsed = parse(message)
-    la(parsed.firstLine === message, 'first line', parsed)
-    la(parsed.type === 'major', 'type', parsed)
-    la(parsed.scope === 'log', 'scope', parsed)
-    la(parsed.subject === 'new log format', 'subject', parsed)
+    snapshot(parse('break(log): new log format'))
   })
 
   it('handles "major" type', () => {
-    const message = 'major(log): new log format'
-    const parsed = parse(message)
-    la(parsed.firstLine === message, 'first line', parsed)
-    la(parsed.type === 'major', 'type', parsed)
-    la(parsed.scope === 'log', 'scope', parsed)
-    la(parsed.subject === 'new log format', 'subject', parsed)
+    snapshot(parse('major(log): new log format'))
   })
 })
 

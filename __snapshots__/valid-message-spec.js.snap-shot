@@ -1,0 +1,28 @@
+exports['parses valid message 1'] = {
+  "firstLine": "feat(foo): new feature",
+  "type": "feat",
+  "scope": "foo",
+  "subject": "new feature"
+}
+
+exports['parses minor message 1'] = {
+  "firstLine": "minor(foo): add feature without breaking stuff",
+  "type": "feat",
+  "scope": "foo",
+  "subject": "add feature without breaking stuff"
+}
+
+exports['handles "break" type 1'] = {
+  "firstLine": "break(log): new log format",
+  "type": "major",
+  "scope": "log",
+  "subject": "new log format"
+}
+
+exports['handles "major" type 1'] = {
+  "firstLine": "major(log): new log format",
+  "type": "major",
+  "scope": "log",
+  "subject": "new log format"
+}
+
