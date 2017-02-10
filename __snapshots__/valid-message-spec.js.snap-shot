@@ -40,3 +40,10 @@ exports['handles "patch" type 1'] = {
   "subject": "correct log name"
 }
 
+exports['ignored everything but the first line 1'] = {
+  "firstLine": "feat(message): first line",
+  "type": "feat",
+  "scope": "message",
+  "subject": "first line"
+}
+

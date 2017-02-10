@@ -52,6 +52,15 @@ describe('parse message', () => {
   it('handles "patch" type', () => {
     snapshot(parse('patch(log): correct log name'))
   })
+
+  it('ignored everything but the first line', () => {
+    const msg = `feat(message): first line
+
+    then the message body
+    separated by an empty line
+    `
+    snapshot(parse(msg))
+  })
 })
 
 describe('validate message', () => {
