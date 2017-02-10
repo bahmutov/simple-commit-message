@@ -61,6 +61,18 @@ describe('parse message', () => {
     `
     snapshot(parse(msg))
   })
+
+  it('ignores lines that start with #', () => {
+    const msg = `# this is a comment
+    # and another comment
+    feat(message): first line
+
+    then the message body
+    separated by an empty line
+    # more comments
+    `
+    snapshot(parse(msg))
+  })
 })
 
 describe('validate message', () => {

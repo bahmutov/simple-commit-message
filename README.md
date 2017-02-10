@@ -41,6 +41,11 @@ For convenience there are aliases to `major`, `minor` and `fix`.
 * "feat(scope): ..." is synonym to "minor(scope): ..."
 * "patch(scope): ..." is synonym to "fix(scope): ..."
 
+### Comments
+
+The commit message can have lines that start with `#` character. These
+lines will be ignored.
+
 ## Install and use
 
     npm install --save simple-commit-message

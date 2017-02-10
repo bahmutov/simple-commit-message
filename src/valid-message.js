@@ -36,8 +36,14 @@ const TYPE_MAP = {
   chore: 'chore'
 }
 
+// removes all lines that start with '#'
+function removeComments (str) {
+  return str.split('\n').filter(s => !/^\s*#/.test(s)).join('\n')
+}
+
 function parseMessage (str) {
   la(check.string(str), 'expected string message', str)
+  str = removeComments(str).trim()
 
   var match = PATTERN.exec(str)
 
