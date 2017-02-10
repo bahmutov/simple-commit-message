@@ -26,3 +26,17 @@ exports['handles "major" type 1'] = {
   "subject": "new log format"
 }
 
+exports['handles "minor" type 1'] = {
+  "firstLine": "minor(log): add logging",
+  "type": "feat",
+  "scope": "log",
+  "subject": "add logging"
+}
+
+exports['handles "patch" type 1'] = {
+  "firstLine": "patch(log): correct log name",
+  "type": "fix",
+  "scope": "log",
+  "subject": "correct log name"
+}
+

@@ -39,6 +39,7 @@ For convenience there are aliases to `major`, `minor` and `fix`.
 
 * "break(scope): ..." is synonym to "major(scope): ..."
 * "feat(scope): ..." is synonym to "minor(scope): ..."
+* "patch(scope): ..." is synonym to "fix(scope): ..."
 
 ## Install and use
 

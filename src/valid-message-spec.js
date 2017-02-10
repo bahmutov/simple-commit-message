@@ -44,6 +44,14 @@ describe('parse message', () => {
   it('handles "major" type', () => {
     snapshot(parse('major(log): new log format'))
   })
+
+  it('handles "minor" type', () => {
+    snapshot(parse('minor(log): add logging'))
+  })
+
+  it('handles "patch" type', () => {
+    snapshot(parse('patch(log): correct log name'))
+  })
 })
 
 describe('validate message', () => {
