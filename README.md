@@ -92,6 +92,16 @@ Then instead of `git commit` use the command `npm run commit` and answer questio
 * [conventional-commit-message](https://github.com/bahmutov/conventional-commit-message)
 is based on AngularJS log standard and has more commit types allowed.
 
+## Debugging
+
+To see the commit processing logic locally, run
+
+```sh
+GH_TOKEN=aaa NPM_TOKEN=fff $(npm bin)/semantic-release pre || true && git checkout .npmrc
+```
+
+This will trigger local commit analysis without publishing.
+
 ### Small print
 
 Author: Gleb Bahmutov &copy; 2015
