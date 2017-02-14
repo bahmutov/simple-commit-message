@@ -16,7 +16,7 @@ const changes = {
   fix: 'patch'
 }
 
-function analyzeCommits (pluginConfig, config, callback) {
+function analyzeCommits (pluginConfig, config, cb) {
   debug('analyzeCommits with %d commits', config.commits.length)
   debug(config.commits)
 
@@ -31,7 +31,7 @@ function analyzeCommits (pluginConfig, config, callback) {
   const change = changes[top]
   debug('top semantic change', top, 'change', change)
 
-  return change
+  cb(null, change)
 }
 
 module.exports = analyzeCommits
