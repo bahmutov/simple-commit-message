@@ -72,6 +72,20 @@ simple.prompter(inquirer, cb)
 
 See [inquirer](https://www.npmjs.com/package/inquirer) for details.
 
+## As plugin for semantic-release
+
+This module can function as [analyzeCommits plugin](https://github.com/semantic-release/semantic-release#analyzecommits)
+for [semantic-release](https://github.com/semantic-release/semantic-release).
+Just add to the `package.json`
+
+```json
+{
+  "release": {
+    "analyzeCommits": "simple-commit-message"
+  }
+}
+```
+
 ## Wizard
 
 This module comes with included "bin" script that runs the wizard and asks you the questions.
@@ -101,6 +115,9 @@ GH_TOKEN=aaa NPM_TOKEN=fff $(npm bin)/semantic-release pre || true && git checko
 ```
 
 This will trigger local commit analysis without publishing.
+
+To see debug log messages run this plugin with `DEBUG=simple` environment
+variable.
 
 ### Small print
 
