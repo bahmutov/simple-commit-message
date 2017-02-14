@@ -5,7 +5,7 @@
   "bin": {
     "simple-commit-message": "bin/simple-wizard.js"
   },
-  "version": "3.0.0",
+  "version": "0.0.0-semantic-release",
   "scripts": {
     "ban": "node --harmony node_modules/.bin/ban",
     "test": "rocha src/*-spec.js",
