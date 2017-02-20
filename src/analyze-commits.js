@@ -24,7 +24,7 @@ function analyzeCommits (pluginConfig, config, cb) {
     .map(c => parse(c.message))
     .filter(c => c)
 
-  console.log('found %d semantic commits', semantic.length)
+  console.log('found %d semantic commit(s)', semantic.length)
   console.log(semantic)
 
   const top = topChange(semantic)
