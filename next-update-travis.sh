@@ -35,7 +35,7 @@ if [ "$TRAVIS_EVENT_TYPE" = "cron" ]; then
     echo "There are new versions of dependencies 💪"
     git add package.json
     echo "----------- package.json diff -------------"
-    git diff package.json
+    git diff --staged
     echo "-------------------------------------------"
     git config --global user.email "next-update@ci.com"
     git config --global user.name "next-update"
