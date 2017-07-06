@@ -68,6 +68,10 @@ const result = simple.parse(message)
 simple.validate(message, log)
 // message wizard built on top of inquirer
 simple.prompter(inquirer, cb)
+// returns true if the commit message is public ("feat", etc)
+simple.isPublic(
+  simple.parse("feat(foo): add foo feature").type
+) // true
 ```
 
 See [inquirer](https://www.npmjs.com/package/inquirer) for details.

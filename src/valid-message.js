@@ -36,6 +36,16 @@ const TYPE_MAP = {
   chore: 'chore'
 }
 
+// given "major" or "break" returns "major" for example
+function normalizeCommitType (s) {
+  return TYPE_MAP[s] || s
+}
+
+function isValidType (s) {
+  const type = normalizeCommitType(s)
+  return TYPES.hasOwnProperty(type)
+}
+
 // removes all lines that start with '#'
 function removeComments (str) {
   return str.split('\n').filter(s => !/^\s*#/.test(s)).join('\n')
@@ -51,7 +61,7 @@ function parseMessage (str) {
     return
   }
 
-  const type = TYPE_MAP[match[2]] || match[2]
+  const type = normalizeCommitType(match[2])
   return {
     firstLine: match[1],
     type: type,
@@ -101,7 +111,7 @@ function validateMessage (message, log) {
     return false
   }
 
-  if (!TYPES.hasOwnProperty(parsed.type)) {
+  if (!isValidType(parsed.type)) {
     failedMessage('"%s" is not allowed type !', parsed.type)
     return false
   }
@@ -121,5 +131,7 @@ function validateMessage (message, log) {
 
 module.exports = {
   validate: validateMessage,
-  parse: parseMessage
+  parse: parseMessage,
+  normalize: normalizeCommitType,
+  isValidType: isValidType
 }

@@ -17,7 +17,8 @@ const analyze = eval( // eslint-disable-line no-eval
 const props = {
   parse: require('./valid-message').parse,
   validate: require('./valid-message').validate,
-  prompter: require('./message-wizard').prompter
+  prompter: require('./message-wizard').prompter,
+  isPublic: require('./is-public')
 }
 
 const combined = Object.assign(analyze, props)

@@ -1,0 +1,38 @@
+exports['determines if commit is public 1'] = {
+  "name": "isPublicCommitType",
+  "behavior": [
+    {
+      "given": "major",
+      "expect": true
+    },
+    {
+      "given": "break",
+      "expect": true
+    },
+    {
+      "given": "minor",
+      "expect": true
+    },
+    {
+      "given": "feat",
+      "expect": true
+    },
+    {
+      "given": "fix",
+      "expect": true
+    },
+    {
+      "given": "patch",
+      "expect": true
+    },
+    {
+      "given": "chore",
+      "expect": false
+    },
+    {
+      "given": "anything else",
+      "expect": false
+    }
+  ]
+}
+

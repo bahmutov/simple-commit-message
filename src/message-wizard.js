@@ -8,8 +8,8 @@ const join = require('path').join
 function fillQuestions (questions) {
   // assumes commit from the package folder
   const pkg = require(join(process.cwd(), 'package.json'))
-  const currentTag = pkg.publishConfig &&
-    pkg.publishConfig.tag || 'latest'
+  const configuredTag = pkg.publishConfig && pkg.publishConfig.tag
+  const currentTag = configuredTag || 'latest'
 
   const filledQuestions = updateQuestion(questions, {
     name: 'tag',
