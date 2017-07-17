@@ -7,13 +7,13 @@
   },
   "version": "0.0.0-development",
   "scripts": {
-    "ban": "node --harmony node_modules/.bin/ban",
+    "ban": "node node_modules/.bin/ban",
     "test": "rocha src/*-spec.js",
     "lint": "standard --verbose --fix bin/*.js src/*.js",
     "commit": "commit-wizard",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";",
-    "wizard": "node --harmony bin/simple-wizard.js",
+    "wizard": "node bin/simple-wizard.js",
     "issues": "git-issues"
   },
   "repository": {
