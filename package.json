@@ -49,7 +49,7 @@
     "rocha": "2.5.0",
     "semantic-release": "^6.3.6",
     "snap-shot": "2.17.0",
-    "standard": "10.0.02"
+    "standard": "10.0.2"
   },
   "config": {
     "pre-git": {
