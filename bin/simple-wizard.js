@@ -1,4 +1,4 @@
-#!/usr/bin/env node --harmony
+#!/usr/bin/env node
 
 const inquirer = require('inquirer')
 const simple = require('..')
