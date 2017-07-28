@@ -42,7 +42,7 @@ function addPlugin () {
   pkg.release.analyzeCommits = 'simple-commit-message'
   const text = JSON.stringify(pkg, null, 2) + '\n'
   fs.writeFileSync(filename, text, 'utf8')
-  console.log('✅  set generate notes plugin in', filename)
+  console.log('✅  set analyzeCommits plugin in', filename)
 }
 
 if (alreadyInstalled()) {
