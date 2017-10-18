@@ -22,24 +22,52 @@ This module can:
 
 ## Valid commit messages
 
-There are 3 names for each version number upgrade, plus a few
-utility names that should not change the version.
+### Simplest
+
+```
+major: breaking change in API
+minor: this is a new feature
+fix: an example fix message
+```
+
+### Synonyms
+
+For convenience you can use synonyms:
+
+* "break: ..." is synonym to "major: ..."
+* "feat: ..." is synonym to "minor: ..."
+* "patch: ..." is synonym to "fix: ..."
+
+### Scopes
+
+You can optionally put a *scope* for the commit. For example if you added
+a new feature to the `log` feature of the module
+
+```
+feat(log): added colors!
+```
+
+Similarly, you can add scope to each type
 
 ```
 major(scope): breaking change in API
 minor(something): this is a new feature
 fix(login): an example fix message
+```
+
+### Skip release
+
+If you just want to commit code, but not publish a new version from CI, you
+have several choices.
+
+```
 chore(tests): writing more tests
 WIP: work in progress, not ready yet
 ```
 
-### Synonyms
-
-For convenience there are aliases to `major`, `minor` and `fix`.
-
-* "break(scope): ..." is synonym to "major(scope): ..."
-* "feat(scope): ..." is synonym to "minor(scope): ..."
-* "patch(scope): ..." is synonym to "fix(scope): ..."
+**note** if you have local commit message validation as a Git hook, for
+example using [pre-git](https://github.com/bahmutov/pre-git#readme)
+skip the message check using `git commit -n` option.
 
 ### Comments
 
