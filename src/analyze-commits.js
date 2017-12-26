@@ -1,8 +1,7 @@
 'use strict'
 
 const parse = require('./valid-message').parse
-const topChange = require('largest-semantic-change').topChange
-const debug = require('debug')('simple')
+const la = require('lazy-ass')
 
 // semantic-release only understands
 // major, minor and patch
@@ -16,22 +15,19 @@ const changes = {
   fix: 'patch'
 }
 
-function analyzeCommits (pluginConfig, config, cb) {
-  debug('analyzeCommits with %d commits', config.commits.length)
-  debug(config.commits)
-
-  const semantic = config.commits
-    .map(c => parse(c.message))
-    .filter(c => c)
-
-  console.log('found %d semantic commit(s)', semantic.length)
+/* pluginConfig, config */
+function analyzeCommits (releaseRules, commit) {
+  const semantic = parse(commit.message)
+  if (!semantic) {
+    return
+  }
+  console.log('found semantic')
   console.log(semantic)
 
-  const top = topChange(semantic)
-  const change = changes[top]
-  debug('top semantic change', top, 'change', change)
+  const releaseType = changes[semantic.type]
+  la(releaseType, 'could not pick release type from', semantic)
 
-  cb(null, change)
+  return releaseType
 }
 
 module.exports = analyzeCommits

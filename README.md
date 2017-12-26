@@ -118,6 +118,11 @@ Just add to the `package.json` (during install this will be done automatically)
 }
 ```
 
+### Versions
+
+* `1 ... 3.x` compatible with `semantic-release` v8
+* `4` compatible with `semantic-release` v11
+
 ## Wizard
 
 This module comes with included "bin" script that runs the wizard and asks you the questions.
