@@ -5,7 +5,7 @@
   "bin": {
     "simple-commit-message": "bin/simple-wizard.js"
   },
-  "version": "4.0.0",
+  "version": "0.0.0-development",
   "scripts": {
     "ban": "node node_modules/.bin/ban",
     "deps": "deps-ok && dependency-check --no-dev .  --entry src/postinstall.js",
