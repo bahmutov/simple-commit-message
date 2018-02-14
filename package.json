@@ -67,7 +67,8 @@
         "npm run size"
       ],
       "post-commit": [],
-      "post-merge": []
+      "post-merge": [],
+      "analyzeCommits": "./index.js"
     }
   },
   "dependencies": {
@@ -84,7 +85,6 @@
     "word-wrap": "1.2.3"
   },
   "release": {
-    "analyzeCommits": "./index.js",
     "generateNotes": "github-post-release"
   }
 }
