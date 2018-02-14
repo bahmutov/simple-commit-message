@@ -68,7 +68,8 @@
       ],
       "post-commit": [],
       "post-merge": [],
-      "analyzeCommits": "./index.js"
+      "analyzeCommits": "./index.js",
+      "generateNotes": "github-post-release"
     }
   },
   "dependencies": {
@@ -85,6 +86,5 @@
     "word-wrap": "1.2.3"
   },
   "release": {
-    "generateNotes": "github-post-release"
   }
 }
