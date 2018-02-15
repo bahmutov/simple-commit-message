@@ -2,6 +2,7 @@
 
 const parse = require('./valid-message').parse
 const la = require('lazy-ass')
+const debug = require('debug')('simple')
 
 // semantic-release only understands
 // major, minor and patch
@@ -17,6 +18,9 @@ const changes = {
 
 /* pluginConfig, config */
 function analyzeCommits (releaseRules, commit) {
+  debug('analyze commits')
+  debug('commit', commit)
+
   const semantic = parse(commit.message)
   if (!semantic) {
     return

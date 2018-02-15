@@ -4,6 +4,7 @@ const la = require('lazy-ass')
 const check = require('check-more-types')
 const util = require('util')
 const semver = require('semver')
+const debug = require('debug')('simple')
 
 const MAX_LENGTH = 100
 const PATTERN = /^((?:fixup!\s*)?(\w*)(\(([\w$.*/-]*)\))?: (.*))(\n|$)/
@@ -52,6 +53,8 @@ function removeComments (str) {
 }
 
 function parseMessage (str) {
+  debug('parsing message "%s"', str)
+
   la(check.string(str), 'expected string message', str)
   str = removeComments(str).trim()
 
@@ -71,6 +74,8 @@ function parseMessage (str) {
 }
 
 function validateMessage (message, log) {
+  debug('validate message "%s"', message)
+
   la(check.string(message), 'expected string message', message)
   message = message.trim()
   if (!log) {
