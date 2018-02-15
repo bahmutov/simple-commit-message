@@ -80,11 +80,10 @@
     "hr": "0.1.3",
     "inquirer": "0.12.0",
     "inquirer-confirm": "0.2.2",
-    "largest-semantic-change": "1.0.0",
+    "largest-semantic-change": "1.1.0",
     "lazy-ass": "1.6.0",
     "semver": "5.5.0",
     "word-wrap": "1.2.3"
   },
-  "release": {
-  }
+  "release": {}
 }

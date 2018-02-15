@@ -2,7 +2,9 @@
 
 const parse = require('./valid-message').parse
 const la = require('lazy-ass')
+const is = require('check-more-types')
 const debug = require('debug')('simple')
+const {topChange} = require('largest-semantic-change')
 
 // semantic-release only understands
 // major, minor and patch
@@ -16,20 +18,27 @@ const changes = {
   fix: 'patch'
 }
 
-/* pluginConfig, config */
-function analyzeCommits (releaseRules, commit) {
+const isDefined = s => s
+
+// should be compatible with semantic-release v11+
+function analyzeCommits (pluginConfig, config) {
   debug('analyze commits')
-  debug('commit', commit)
+  debug('release rules %j', pluginConfig)
+  const {options, commits} = config
+  debug('options %j', options)
+  debug('commit', commits)
 
-  const semantic = parse(commit.message)
-  if (!semantic) {
-    return
-  }
-  console.log('found semantic')
-  console.log(semantic)
+  la(is.array(commits), 'expected list of commits in', config)
 
-  const releaseType = changes[semantic.type]
-  la(releaseType, 'could not pick release type from', semantic)
+  const semantics = commits.map(c => c.message).map(parse).filter(isDefined)
+  debug('semantic commits')
+  debug(semantics)
+
+  const types = semantics.map(s => s.type).map(t => changes[t]).filter(isDefined)
+  debug('commit release types', types)
+
+  const releaseType = changes[topChange(types)]
+  debug('picked top release type', releaseType)
 
   return releaseType
 }
