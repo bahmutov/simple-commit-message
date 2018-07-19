@@ -85,5 +85,8 @@
     "semver": "5.5.0",
     "word-wrap": "1.2.3"
   },
-  "release": {}
+  "release": {
+    "analyzeCommits": "simple-commit-message",
+    "generateNotes": "github-post-release"
+  }
 }
