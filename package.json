@@ -49,7 +49,7 @@
     "github-post-release": "1.13.1",
     "next-update-travis": "1.7.1",
     "pre-git": "3.17.1",
-    "ramda": "0.26.0",
+    "ramda": "0.26.1",
     "rocha": "2.5.10",
     "semantic-release": "14.0.4",
     "snap-shot": "2.17.0",
