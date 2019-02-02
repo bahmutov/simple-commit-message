@@ -10,7 +10,7 @@ describe('analyze-commits', () => {
     const commit = {
       message: 'feat: something new'
     }
-    const type = analyzeCommits(null, {commits: [commit]})
+    const type = analyzeCommits(null, { commits: [commit] })
     la(type === 'minor', type)
   })
 
@@ -18,7 +18,7 @@ describe('analyze-commits', () => {
     const commit = {
       message: 'break: something different'
     }
-    const type = analyzeCommits(null, {commits: [commit]})
+    const type = analyzeCommits(null, { commits: [commit] })
     la(type === 'major', type)
   })
 
@@ -30,7 +30,7 @@ describe('analyze-commits', () => {
     }, {
       message: 'feat(foo): finished foo'
     }]
-    const type = analyzeCommits(null, {commits})
+    const type = analyzeCommits(null, { commits })
     la(type === 'minor', 'picked largest type', type)
   })
 
@@ -44,7 +44,7 @@ describe('analyze-commits', () => {
     }, {
       message: 'another one'
     }]
-    const type = analyzeCommits(null, {commits})
+    const type = analyzeCommits(null, { commits })
     la(type === 'minor', 'picked largest type', type)
   })
 })

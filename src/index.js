@@ -10,6 +10,7 @@ const analyzeCommits = require('./analyze-commits') // eslint-disable-line no-un
 // extend it with additional properties, just have to
 // play a trick to get the "name" property right
 const analyze = eval( // eslint-disable-line no-eval
+// eslint-disable-next-line indent
 `(function ${name} () {
   return analyzeCommits.apply(null, arguments)
 })`)
