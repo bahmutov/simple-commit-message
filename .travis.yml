@@ -1,17 +1,11 @@
-sudo: false
 language: node_js
-cache:
-  directories:
-    - node_modules
+cache: npm
 notifications:
   email: true
 node_js:
-  - '8'
-before_script:
-  - npm prune
+  - '12'
 script:
   - npm run ban -- -f
-  - ./next-update-travis.sh
   - npm run lint
   - npm test
 after_success:
