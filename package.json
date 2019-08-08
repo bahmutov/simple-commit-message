@@ -46,7 +46,6 @@
     "dependency-check": "3.3.0",
     "deps-ok": "1.4.1",
     "git-issues": "1.3.1",
-    "github-post-release": "1.13.1",
     "next-update-travis": "1.7.1",
     "pre-git": "3.17.1",
     "ramda": "0.26.1",
@@ -84,7 +83,6 @@
     "word-wrap": "1.2.3"
   },
   "release": {
-    "analyzeCommits": "./src/index.js",
-    "generateNotes": "github-post-release"
+    "analyzeCommits": "./src/index.js"
   }
 }
