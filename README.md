@@ -6,9 +6,8 @@
 [![NPM][simple-commit-message-icon] ][simple-commit-message-url]
 
 [![Build status][simple-commit-message-ci-image] ][simple-commit-message-ci-url]
-[![dependencies][simple-commit-message-dependencies-image] ][simple-commit-message-dependencies-url]
-[![devdependencies][simple-commit-message-devdependencies-image] ][simple-commit-message-devdependencies-url]
 [![semantic-release][semantic-image] ][semantic-url]
+[![renovate-app badge][renovate-badge]][renovate-app]
 [![manpm](https://img.shields.io/badge/manpm-%E2%9C%93-3399ff.svg)](https://github.com/bahmutov/manpm)
 [![standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
@@ -200,9 +199,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 [simple-commit-message-url]: https://npmjs.org/package/simple-commit-message
 [simple-commit-message-ci-image]: https://travis-ci.org/bahmutov/simple-commit-message.svg?branch=master
 [simple-commit-message-ci-url]: https://travis-ci.org/bahmutov/simple-commit-message
-[simple-commit-message-dependencies-image]: https://david-dm.org/bahmutov/simple-commit-message.svg
-[simple-commit-message-dependencies-url]: https://david-dm.org/bahmutov/simple-commit-message
-[simple-commit-message-devdependencies-image]: https://david-dm.org/bahmutov/simple-commit-message/dev-status.svg
-[simple-commit-message-devdependencies-url]: https://david-dm.org/bahmutov/simple-commit-message#info=devDependencies
 [semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-url]: https://github.com/semantic-release/semantic-release
+[renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
+[renovate-app]: https://renovateapp.com/
