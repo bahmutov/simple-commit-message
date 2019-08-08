@@ -4,7 +4,7 @@ const parse = require('./valid-message').parse
 const la = require('lazy-ass')
 const is = require('check-more-types')
 const debug = require('debug')('simple')
-const {topChange} = require('largest-semantic-change')
+const { topChange } = require('largest-semantic-change')
 
 // semantic-release only understands
 // major, minor and patch
@@ -24,7 +24,7 @@ const isDefined = s => s
 function analyzeCommits (pluginConfig, config) {
   debug('analyze commits')
   debug('release rules %j', pluginConfig)
-  const {options, commits} = config
+  const { options, commits } = config
   debug('options %j', options)
   debug('commit', commits)
 

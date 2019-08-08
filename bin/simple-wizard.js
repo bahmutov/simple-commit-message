@@ -13,6 +13,5 @@ simple.prompter(inquirer, function (text) {
   hr.hr('-')
 
   confirm('Do you want to commit?')
-    .then(ggit.commit.bind(null, text))
-    .done()
+    .then(ggit.commit.bind(null, text), () => {})
 })

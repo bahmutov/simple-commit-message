@@ -43,7 +43,7 @@
   "homepage": "https://github.com/bahmutov/simple-commit-message#readme",
   "devDependencies": {
     "ban-sensitive-files": "1.9.2",
-    "dependency-check": "2.10.1",
+    "dependency-check": "3.3.0",
     "deps-ok": "1.4.1",
     "git-issues": "1.3.1",
     "github-post-release": "1.13.1",
@@ -51,9 +51,9 @@
     "pre-git": "3.17.1",
     "ramda": "0.26.1",
     "rocha": "2.5.10",
-    "semantic-release": "14.0.4",
+    "semantic-release": "15.13.3",
     "snap-shot": "2.17.0",
-    "standard": "10.0.3"
+    "standard": "12.0.1"
   },
   "config": {
     "pre-git": {
@@ -75,11 +75,11 @@
   "dependencies": {
     "am-i-a-dependency": "1.1.2",
     "check-more-types": "2.24.0",
-    "debug": "3.2.6",
+    "debug": "4.1.1",
     "ggit": "2.4.11",
     "hr": "0.1.3",
-    "inquirer": "0.12.0",
-    "inquirer-confirm": "0.2.2",
+    "inquirer": "6.2.2",
+    "inquirer-confirm": "2.0.2",
     "largest-semantic-change": "1.1.0",
     "lazy-ass": "1.6.0",
     "semver": "5.7.0",

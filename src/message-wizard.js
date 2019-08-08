@@ -24,7 +24,7 @@ module.exports = {
     console.log('\nLine 1 will be cropped at 100 characters.\n' +
       'All other lines will be wrapped after 100 characters.\n')
     const filledQuestions = fillQuestions(questions)
-    inquirer.prompt(filledQuestions, (answers) => cb(formatMessage(answers)))
+    inquirer.prompt(filledQuestions).then((answers) => cb(formatMessage(answers)))
   }
 }
 
