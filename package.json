@@ -75,7 +75,7 @@
     "debug": "4.1.1",
     "ggit": "2.4.11",
     "hr": "0.1.3",
-    "inquirer": "6.2.2",
+    "inquirer": "6.5.0",
     "inquirer-confirm": "2.0.2",
     "largest-semantic-change": "1.1.0",
     "lazy-ass": "1.6.0",
