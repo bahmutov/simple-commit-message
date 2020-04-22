@@ -15,8 +15,7 @@
     "semantic-release": "semantic-release",
     "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";",
     "wizard": "node bin/simple-wizard.js",
-    "issues": "git-issues",
-    "postinstall": "node src/postinstall.js"
+    "issues": "git-issues"
   },
   "repository": {
     "type": "git",
