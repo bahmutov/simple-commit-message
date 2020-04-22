@@ -107,13 +107,11 @@ See [inquirer](https://www.npmjs.com/package/inquirer) for details.
 
 This module can function as [analyzeCommits plugin](https://github.com/semantic-release/semantic-release#analyzecommits)
 for [semantic-release](https://github.com/semantic-release/semantic-release).
-Just add to the `package.json` (during install this will be done automatically)
+Just add to the [configuration file](https://semantic-release.gitbook.io/semantic-release/usage/configuration#configuration-file)
 
 ```json
 {
-  "release": {
-    "analyzeCommits": "simple-commit-message"
-  }
+  "analyzeCommits": "simple-commit-message"
 }
 ```
 
