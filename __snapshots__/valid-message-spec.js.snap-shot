@@ -54,3 +54,10 @@ exports['ignores lines that start with # 1'] = {
   "subject": "first line"
 }
 
+exports['parses NOnLoWeRcased message 1'] = {
+  "firstLine": "major(foo): add another major feature",
+  "type": "major",
+  "scope": "foo",
+  "subject": "add another major feature"
+}
+
