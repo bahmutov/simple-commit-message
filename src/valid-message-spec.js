@@ -31,6 +31,10 @@ describe('parse message', () => {
     snapshot(parse('minor(foo): add feature without breaking stuff'))
   })
 
+  it('parses NOnLoWeRcased message', () => {
+    snapshot(parse('MaJOr(foo): add another major feature'))
+  })
+
   it('rejects invalid message', () => {
     const message = 'free form text'
     const parsed = parse(message)

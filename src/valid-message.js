@@ -56,7 +56,7 @@ function parseMessage (str) {
   debug('parsing message "%s"', str)
 
   la(check.string(str), 'expected string message', str)
-  str = removeComments(str).trim()
+  str = removeComments(str).trim().toLowerCase()
 
   var match = PATTERN.exec(str)
 
