@@ -193,7 +193,7 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
-[ci image]: https://github.com/bahmutov/simple-commit-message/workflows/ci/badge.svg?branch=main
+[ci image]: https://github.com/bahmutov/simple-commit-message/workflows/ci/badge.svg?branch=master
 [ci url]: https://github.com/bahmutov/simple-commit-message/actions
 [simple-commit-message-icon]: https://nodei.co/npm/simple-commit-message.svg?downloads=true
 [simple-commit-message-url]: https://npmjs.org/package/simple-commit-message
