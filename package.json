@@ -76,7 +76,7 @@
     "inquirer": "6.5.2",
     "inquirer-confirm": "2.0.7",
     "largest-semantic-change": "1.1.0",
-    "lazy-ass": "1.6.0",
+    "lazy-ass": "2.0.3",
     "semver": "5.7.1",
     "word-wrap": "1.2.3"
   },
